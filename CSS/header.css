@@ -1,0 +1,22 @@
+header {
+    height: 80px;
+}
+
+header div {
+    position: relative;
+}
+
+header .logo {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+header img{
+    height: 50px;
+}
+
+header input{
+    border-radius: var(--radius-sm);
+    height: 40px;
+    width: 20%;
+}

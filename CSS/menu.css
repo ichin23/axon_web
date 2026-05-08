@@ -1,0 +1,49 @@
+
+.navMenu{
+    width: 90vw;
+    border-radius: var(--radius-rounded);
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 70px;
+}
+
+.navMenu ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0;
+    padding: 5px;
+    height: 100%;
+}
+
+.menuItem{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 10px;
+}
+
+.menuItem span{
+    display: none;
+}
+
+.menuItem.checked {
+    background-color: var(--secondary);
+    border-radius: var(--radius-rounded);
+}
+
+.menuItem.checked span{
+    display: block;
+}
+
+@media (min-width: 576px) {
+    .navMenu{
+        max-width: 300px;
+    }
+}
