@@ -1,0 +1,30 @@
+.content{
+    padding: 30px 10px 0 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.content main{
+    flex: 1;
+    height: calc(100vh - 110px);
+}
+
+
+.content main section{
+    display: none;
+}
+
+.content main section:target{
+    display: block;
+}
+
+.notFound{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.notFound i{
+    font-size: 80px;
+}

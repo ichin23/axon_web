@@ -19,6 +19,10 @@
     height: 100%;
 }
 
+.navMenu li{
+    height: 95%;
+}
+
 .menuItem{
     flex:1;
     display: flex;
@@ -27,6 +31,11 @@
     justify-content: center;
     height: 100%;
     padding: 10px;
+    border-radius: var(--radius-rounded);
+    transition: all .3s;
+    text-decoration: none;
+    width: 100px;
+    transition: all .3s;
 }
 
 .menuItem span{
@@ -35,7 +44,7 @@
 
 .menuItem.checked {
     background-color: var(--secondary);
-    border-radius: var(--radius-rounded);
+    width: 120px;
 }
 
 .menuItem.checked span{
@@ -45,5 +54,48 @@
 @media (min-width: 576px) {
     .navMenu{
         max-width: 300px;
+        position: sticky;
+        left: 0;
+        top: 0;
+        transform: none;
+        height: fit-content;
+        border-radius: 12px;
+        padding: 6px;
     }
+
+    .navMenu ul{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navMenu li{
+        width: 100%;
+    }
+
+    .menuItem{
+        flex-direction: row;
+        justify-content: start;
+        gap: 20px;
+        width: 100%;
+        border-radius: var(--radius-sm);
+        border: 2px solid transparent;
+    }
+
+    .menuItem:hover{
+        background-color: var(--secondary);
+        border: 2px solid var(--secondary);
+        box-shadow: 0px 0px 10px var(--primary);
+        color: var(--primary);
+        cursor: pointer;
+    }
+    
+    .menuItem.checked{
+        background-color: var(--primary);
+        width: 100%;
+    }
+
+    .menuItem span{
+        display: block;
+    }
+    
 }
