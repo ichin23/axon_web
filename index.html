@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="./CSS/styles.css">
     <link rel="stylesheet" href="./CSS/header.css">
     <link rel="stylesheet" href="./CSS/menu.css">
+    <link rel="stylesheet" href="./CSS/index.css">
 
     <!-- Scripts -->
     <script
@@ -40,35 +41,59 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+
+    <script type="module" src="./js/homepage.js"></script>
   </head>
 
   <body>
     <header>
-        <div class="w-100 h-100 d-flex justify-content-center align-items-center">
-            <input class="glassBg" placeholder="Busca" type="search">
-        </div>
-        <a class="logo" href="/">
-            <img src="./img/logo_axon.png" alt="">
-        </a>
+      <a class="logo" href="/">
+          <img src="./img/logo_axon.png" alt="">
+      </a>
+      <div class="w-100 h-100 d-flex justify-content-center align-items-center">
+          <input class="glassBg" placeholder="Busca" type="search">
+      </div>
     </header>
     
-    <div>
+    <div class="content">
         <nav class="navMenu glassBg">
             <ul>
-                <li class="menuItem checked">
+                <li>
+                  <a href="#recentlySection" class="menuItem">
                     <i class="bi bi-clock-history"></i>
                     <span>Recentes</span>
+                  </a>
                 </li>
-                <li class="menuItem">
+                <li>
+                  <a href="#trendingSection" class="menuItem">
                     <i class="bi bi-graph-up"></i>
                     <span>Em alta</span>
+                  </a>
                 </li>
-                <li class="menuItem">
+                <li>
+                  <a href="#favoritesSection" class="menuItem">
                     <i class="bi bi-heart"></i>
                     <span>Favoritos</span>
+                  </a>
                 </li>
             </ul>
         </nav>
+        <main>
+          <section id="recentlySection">
+            <div class="recentlyPlayed"></div>
+            <div class="notFound">
+              <i class="bi bi-controller"></i>
+              <span>Nenhum jogo aberto ainda...</span>
+            </div>
+          </section>
+          <section id="trendingSection">
+
+          </section>
+
+          <section id="favoritesSection">
+
+          </section>
+        </main>
     </div>
   </body>
 
