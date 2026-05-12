@@ -70,6 +70,10 @@ body::before{
 input{
     padding: 10px;
     color: var(--white);
+    border-radius: var(--radius-sm);
+    width: 90%;
+    height: 40px;
+    min-width: 300px;
 }
 
 input::placeholder{

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PD Sports</title>
+    <title>AXON - PD Games</title>
     <link
       rel="icon"
       href="assets/media/icons/favicon.svg"
@@ -45,17 +45,11 @@
     <script type="module" src="./js/homepage.js"></script>
   </head>
 
-  <body>
+  <body class="d-flex flex-column flex-md-row">
     <header>
-      <a class="logo" href="/">
-          <img src="./img/logo_axon.png" alt="">
-      </a>
-      <div class="w-100 h-100 d-flex justify-content-center align-items-center">
-          <input class="glassBg" placeholder="Busca" type="search">
-      </div>
-    </header>
-    
-    <div class="content">
+        <a class="logo" href="/">
+            <img src="./img/logo_axon.png" alt="">
+        </a>
         <nav class="navMenu glassBg">
             <ul>
                 <li>
@@ -78,23 +72,27 @@
                 </li>
             </ul>
         </nav>
-        <main>
-          <section id="recentlySection">
-            <div class="recentlyPlayed"></div>
-            <div class="notFound">
-              <i class="bi bi-controller"></i>
-              <span>Nenhum jogo aberto ainda...</span>
-            </div>
-          </section>
-          <section id="trendingSection">
+      </header>
+      <main class="w-100 h-100 d-flex flex-column justify-content-start align-items-center">
+        <form action="search.html">
+            <input class="glassBg" placeholder="Busca" type="search">
+        </form>
+        <section id="recentlySection">
+          <div class="recentlyPlayed"></div>
+          <div class="notFound">
+            <i class="bi bi-controller"></i>
+            <span>Nenhum jogo aberto ainda...</span>
+          </div>
+        </section>
+        <section id="trendingSection">
+          <h1>Jogos em alta</h1>
+        </section>
 
-          </section>
-
-          <section id="favoritesSection">
-
-          </section>
-        </main>
-    </div>
+        <section id="favoritesSection">
+          <h1>Jogos favoritos</h1>
+        </section>
+      </main>
+   
   </body>
 
 </html>
