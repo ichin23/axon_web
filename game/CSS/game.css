@@ -65,9 +65,10 @@ main{
     height: auto;
     padding: 20px;
     gap: 20px;
+    position: relative;
 }
 
-.imagesSec div{
+.imagesSec .images{
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -77,12 +78,30 @@ main{
 
 .imagesSec img{
     flex-grow: 1;
-    min-width: calc((100%)/2.5);
+    width: 100%;
     height: auto;
     aspect-ratio:16/9;
     border-radius: var(--radius-sm);
     flex: 0;
     object-fit: cover;
+    cursor: pointer;
+}
+
+.hoverVerMais{
+    display: none;
+}
+
+.imagesSec:hover > .hoverVerMais{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3030307a;
     cursor: pointer;
 }
 
@@ -94,7 +113,6 @@ main{
         width: 40%;
     }
     .imagesSec img{
-        min-width: calc((100%)/5.5);
     }
 }
 
