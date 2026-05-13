@@ -1,4 +1,6 @@
+import { createGameCard } from "./cardGame.js"
 import {getGameAssets, getGameById, searchGame} from "./games/useGames.js"
+import { getRecentlyPlayed } from "./games/useRecentlyPlayed.js"
 
 const menu = ["#recentlySection", "#trendingSection", "#favoritesSection"]
 const menuItens = document.querySelectorAll(".menuItem")
@@ -16,4 +18,13 @@ menuItens.forEach((menuItem)=>{
         menuItens.forEach((item)=>item.classList.remove("checked"))
         menuItens[menu.indexOf(url.hash)].classList.add("checked")
     })
+})
+
+const recentlyPlayedSec = document.querySelector(".recentlyPlayed")
+const notFound = document.querySelector(".notFound")
+const recently = getRecentlyPlayed()
+
+recently.forEach((game)=>{
+    recentlyPlayedSec.appendChild(createGameCard(game.id, game.img, game.name, false))
+    notFound.style.display='none'
 })

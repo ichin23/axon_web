@@ -25,6 +25,16 @@
     margin: 10px 0;
 }
 
+.rating > *{
+    font-size: 30px;
+    color: var(--tertiary);
+}
+
+.rating .ratingCount{
+    color: var(--white);
+    font-size: 18px;
+}
+
 .imagesSec video{
     width: 100%;
     min-width: none;

@@ -18,6 +18,8 @@ main{
 
 main section{
     display: none;
+    padding: 20px;
+    width: 100%;
 }
 
 main section:target{
@@ -34,4 +36,8 @@ main section:target{
     font-size: 80px;
 }
 
-
+.recentlyPlayed{
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
