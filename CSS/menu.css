@@ -1,4 +1,38 @@
 
+header{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+header img{
+    width: 30vw;
+}
+
+header div {
+    margin-top: 10px;
+}
+
+header .logo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 576px){    
+    header .logo {
+        width: fit-content;
+    }
+    
+    header img{
+        width: auto;
+        height: 50px;
+    }
+
+}
+
 .navMenu{
     width: 90vw;
     border-radius: var(--radius-rounded);
