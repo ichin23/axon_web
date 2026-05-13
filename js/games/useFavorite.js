@@ -18,7 +18,7 @@ function setFavorites(favorites){
 export function addFavorite(game){
     const favorites = getFavorites()
 
-    favorites.push({
+    favorites.unshift({
         id: game.id,
         name: game.name,
         img: game.background_image
