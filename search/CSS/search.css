@@ -1,0 +1,11 @@
+main h3{
+    width: 85vw;
+    margin: auto;
+}
+
+.results{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, 200px);
+    gap: 30px;
+}
