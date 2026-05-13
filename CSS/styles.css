@@ -116,14 +116,14 @@ input:focus{
 
 .cardGame img{
     width: 200px;
-    height: 100px;
+    height: 200px;
     border-radius: var(--radius-sm);
     object-fit: cover;
     transition: all .3s;
 }
 
 .cardGame div{
-    height: 100px;
+    height: 200px;
     font-size: 50px;
     width: 200px;
     text-align: center;
