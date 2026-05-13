@@ -18,7 +18,7 @@ function setRecentlyPlayed(recently){
 export function addRecentlyPlayed(game){
     const recently = getRecentlyPlayed()
 
-    recently.push({
+    recently.unshift({
         id: game.id,
         name: game.name,
         img: game.background_image

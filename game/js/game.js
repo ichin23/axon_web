@@ -28,14 +28,14 @@ document.querySelector(".gameRating").innerHTML = game.rating
 document.querySelector(".ratingCount").innerHTML = `(${game.ratings_count} avaliações)`
 document.querySelector(".gameDescription").innerHTML = game.description
 
-if(assets[0].preview){
+if(assets[0]){
     const video = document.createElement("video")
     video.setAttribute("controls", true)
     video.setAttribute("autoplay", true)
     video.src=assets[0].data['480']
     imagesSec.appendChild(video)
-    assets.shift()
 }
+assets.shift()
 
 const modalEl = document.getElementById("modalGamesImages")
 var modalImages = new bootstrap.Modal(modalEl)
@@ -45,7 +45,7 @@ const carousel = document.querySelector(".carousel-games-images")
 const imgs = document.createElement("div")
 assets.forEach(asset => {
     var img = document.createElement("img")
-    img.src = asset.image || asset.preview
+    img.src = asset.image 
 
     imgs.appendChild(img)
 
@@ -71,6 +71,62 @@ imagesSec.appendChild(imgs)
 imagesSec.querySelector("div").addEventListener('click', ()=>{
         console.log("PRINT")
         modalImages.show()
+})
+
+const gamePc = game.platforms.filter((e)=>{return e.platform.slug==="pc"})
+console.log(gamePc)
+document.querySelector(".minRequirements").innerHTML = gamePc[0].requirements.minimum
+document.querySelector(".recomendedRequirements").innerHTML = gamePc[0].requirements.recommended
+
+const imagesStore = {
+    "steam": {
+        type: "i",
+        img: "bi-steam"
+    },
+    "playstation-store":{
+        type: "i",
+        img: "bi-playstation"
+    },
+    "epic-games": {
+        type: "img",
+        img: "/img/epic_logo.png"
+    },
+    "xbox360":{
+        type: "i",
+        img: "bi-xbox"
+    },
+    "xbox-store":{
+        type: "i",
+        img: "bi-xbox"
+    }
+}
+
+const storesSec = document.querySelector(".storesSec")
+game.stores.forEach((store)=>{
+    console.log(store)
+    var div = document.createElement("div")
+
+    div.classList.add("store")
+
+    const image = imagesStore[store.store.slug]
+    if(image && image.type==="i"){
+        const icon = document.createElement("i")
+        icon.classList.add("bi")
+        icon.classList.add(image.img)
+        icon.classList.add("iconStore")
+        div.appendChild(icon)
+    }else if(image && image.type==="img"){
+        const img = document.createElement("img")
+        img.src = image.img
+        img.classList.add("iconStore")
+        div.appendChild(img)
+    }
+    
+    var name = document.createElement("span")
+    name.textContent = store.store.name
+    div.appendChild(name)
+
+    storesSec.appendChild(div)
 })
 
 const btnFavorite = document.querySelector(".favoriteBtn")
