@@ -1,4 +1,5 @@
 import { createGameCard } from "./cardGame.js"
+import { getFavorites } from "./games/useFavorite.js"
 import {getGameAssets, getGameById, searchGame} from "./games/useGames.js"
 import { getRecentlyPlayed } from "./games/useRecentlyPlayed.js"
 
@@ -27,4 +28,10 @@ const recently = getRecentlyPlayed()
 recently.forEach((game)=>{
     recentlyPlayedSec.appendChild(createGameCard(game.id, game.img, game.name, false))
     notFound.style.display='none'
+})
+
+const favoritos = getFavorites()
+const favoritesGames = document.querySelector(".favoritesGames")
+favoritos.forEach((game)=>{
+    favoritesGames.appendChild(createGameCard(game.id, game.img, game.name, false))
 })
