@@ -6,6 +6,7 @@ const searchSection = document.querySelector(".results")
 
 
 if(param.get("query")){
+    document.getElementById("buscaInput").value=param.get("query")
     const games = await searchGame({search: param.get("query")})   
     console.log(games)
 
