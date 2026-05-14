@@ -1,10 +1,10 @@
-body{
+main{
     width: 100vw;
+    padding: 20px;
 }
 
-main{
-    width: 70vw;
-    padding: 20px;
+@media (min-width: 576px){
+    main{width: 70vw;}
 }
 
 .content{
