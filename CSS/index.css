@@ -1,8 +1,11 @@
 main{
+    width: 100vw;
     padding: 20px;
 }
 
-
+@media (min-width: 576px){
+    main{width: 70vw;}
+}
 
 .content{
     padding: 30px 10px 0 30px;
