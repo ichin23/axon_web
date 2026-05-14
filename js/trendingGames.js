@@ -1,0 +1,3 @@
+const trendingGames = [{"id":3498,"name":"Grand Theft Auto V","img":"https://media.rawg.io/media/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg"},{"id":3272,"name":"Rocket League","img":"https://media.rawg.io/media/games/8cc/8cce7c0e99dcc43d66c8efd42f9d03e3.jpg"},{"id":326243,"name":"Elden Ring","img":"https://media.rawg.io/media/games/b29/b294fdd866dcdb643e7bab370a552855.jpg"},{"id":1010949,"name":"Forza Horizon 6","img":"https://media.rawg.io/media/games/d74/d744a3b0f6f0f0bc63f5ceb9b5e63230.jpeg"},{"id":415171,"name":"Valorant","img":"https://media.rawg.io/media/games/b11/b11127b9ee3c3701bd15b9af3286d20e.jpg"},{"id":41494,"name":"Cyberpunk 2077","img":"https://media.rawg.io/media/games/26d/26d4437715bee60138dab4a7c8c59c92.jpg"}]
+
+export {trendingGames}

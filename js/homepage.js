@@ -2,6 +2,7 @@ import { createGameCard } from "./cardGame.js"
 import { getFavorites } from "./games/useFavorite.js"
 import {getGameAssets, getGameById, searchGame} from "./games/useGames.js"
 import { getRecentlyPlayed } from "./games/useRecentlyPlayed.js"
+import {trendingGames} from "./trendingGames.js"
 
 const menu = ["#recentlySection", "#trendingSection", "#favoritesSection"]
 const menuItens = document.querySelectorAll(".menuItem")
@@ -30,8 +31,16 @@ recently.forEach((game)=>{
     notFound.style.display='none'
 })
 
+
+const trendingGamesSec = document.querySelector(".trendingGames")
+trendingGames.forEach((game)=>{
+    trendingGamesSec.appendChild(createGameCard(game.id, game.img, game.name, false))
+})
+
 const favoritos = getFavorites()
 const favoritesGames = document.querySelector(".favoritesGames")
+const notFoundFavorite = document.querySelector(".notFoundFavorite")
 favoritos.forEach((game)=>{
     favoritesGames.appendChild(createGameCard(game.id, game.img, game.name, false))
+    notFoundFavorite.style.display='none'
 })
