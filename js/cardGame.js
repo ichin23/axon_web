@@ -6,13 +6,6 @@ export function createGameCard(id, imgUrl, name, isFavorite=false){
         const img = document.createElement("img")
         img.src = imgUrl
         card.appendChild(img)
-
-        img.addEventListener('mouseover',()=>{
-            const colorThief = new ColorThief()
-            // Retorna um array [R, G, B]
-            const corDominante = colorThief.getColorSync(img);
-            console.log(corDominante);
-        })
     }else{
         const div = document.createElement("div")
         const icon = document.createElement("i")

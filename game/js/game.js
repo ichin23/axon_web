@@ -144,6 +144,7 @@ if(isFavorite){
 
 btnPlay.addEventListener('click', (ev)=>{
     addRecentlyPlayed(game)
+    location.href = "/minigame/index.html"
 })
 
 btnFavorite.addEventListener('click', (ev)=>{
