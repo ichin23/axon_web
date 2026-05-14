@@ -16,7 +16,9 @@ function setRecentlyPlayed(recently){
 }
 
 export function addRecentlyPlayed(game){
-    const recently = getRecentlyPlayed()
+    let recently = getRecentlyPlayed()
+
+    recently = recently.filter((g)=> g.id!==game.id)
 
     recently.unshift({
         id: game.id,

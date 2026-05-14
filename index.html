@@ -31,7 +31,6 @@
     />
 
     <link rel="stylesheet" href="./CSS/styles.css">
-    <link rel="stylesheet" href="./CSS/header.css">
     <link rel="stylesheet" href="./CSS/menu.css">
     <link rel="stylesheet" href="./CSS/index.css">
 
@@ -73,7 +72,7 @@
             </ul>
         </nav>
       </header>
-      <main class="w-100 h-100 d-flex flex-column justify-content-start align-items-center">
+      <main class="d-flex flex-column justify-content-start align-items-center">
         <form action="/search/index.html">
             <input class="glassBg" placeholder="Busca" name="query" type="search">
         </form>
@@ -86,12 +85,17 @@
         </section>
         <section id="trendingSection">
           <h1>Jogos em alta</h1>
+          <div class="trendingGames"></div>
         </section>
 
         <section id="favoritesSection">
           <h1>Jogos favoritos</h1>
           <div class="favoritesGames">
             
+          </div>
+          <div class="notFoundFavorite">
+            <i class="bi bi-controller"></i>
+            <span>Nenhum jogo favoritado ainda...</span>
           </div>
         </section>
       </main>

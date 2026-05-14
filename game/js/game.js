@@ -43,14 +43,15 @@ var modalImages = new bootstrap.Modal(modalEl)
 const carousel = document.querySelector(".carousel-games-images")
 
 const imgs = document.createElement("div")
-assets.forEach(asset => {
-    var img = document.createElement("img")
-    img.src = asset.image 
+var img = document.createElement("img")
+img.src = assets[0].image 
 
-    imgs.appendChild(img)
+imgs.appendChild(img)
+imgs.classList.add("images")
+assets.forEach(asset => {
 
     img = img.cloneNode(true)
-
+    img.src=asset.image
     const itemCarr = document.createElement("div")
     itemCarr.classList.add("carousel-item")
     if(assets.indexOf(asset)===0){
@@ -65,12 +66,14 @@ assets.forEach(asset => {
 
     carousel.appendChild(itemCarr)
     
+    
 });
 
 imagesSec.appendChild(imgs)
 imagesSec.querySelector("div").addEventListener('click', ()=>{
         console.log("PRINT")
         modalImages.show()
+        document.querySelector(".carousel-control-next").focus()
 })
 
 const gamePc = game.platforms.filter((e)=>{return e.platform.slug==="pc"})
@@ -141,6 +144,7 @@ if(isFavorite){
 
 btnPlay.addEventListener('click', (ev)=>{
     addRecentlyPlayed(game)
+    location.href = "/minigame/index.html"
 })
 
 btnFavorite.addEventListener('click', (ev)=>{
