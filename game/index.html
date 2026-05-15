@@ -48,15 +48,18 @@
       </form>
     </header>
 
-    <main>
+    <main class="d-none">
       <article class="gameDetails d-flex flex-column flex-md-row glassBg">
         <h2 class="gameTitle d-block d-md-none"></h2>
         <aside class="imagesSec">
           
-          
-          <div class="hoverVerMais">
-            <i class="bi bi-eye"></i>
-            Ver mais imagens
+          <div class="images">
+            <template class="vermaisTemplate">
+              <div class="vermais">
+                <i class="bi bi-eye"></i>
+                Ver mais imagens
+              </div>
+            </template>
           </div>
         </aside>
 
@@ -95,6 +98,26 @@
 
       </article>
     </main>
+
+    <div class="notFound d-none">
+      <i class="bi bi-controller"></i>
+      <span>Jogo não encontrado...</span>
+    </div>
+
+    <section class="loadingSec w-100 h-100 d-flex justify-content-center align-items-center">
+        <div class="spinners">
+
+          <div class="spinner-grow" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </section>
 
     <div class="modal fade" id="modalGamesImages" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-lg">

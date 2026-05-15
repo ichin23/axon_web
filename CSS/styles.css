@@ -26,6 +26,12 @@ body::before{
     z-index: -1; 
 }
 
+main{
+    width: 100%;
+    max-width: min(1420px, 90%);
+    margin: 20px auto;
+}
+
 :root {
 
     /* Colors */
@@ -72,6 +78,7 @@ input{
     color: var(--white);
     border-radius: var(--radius-sm);
     width: 90%;
+    max-width: 1420px;
     height: 40px;
     min-width: 300px;
 }
@@ -115,17 +122,17 @@ input:focus{
 }
 
 .cardGame img{
-    width: 200px;
-    height: 200px;
+    max-width: 200px;
+    aspect-ratio: 1;
     border-radius: var(--radius-sm);
     object-fit: cover;
     transition: all .3s;
 }
 
 .cardGame div{
-    height: 200px;
     font-size: 50px;
-    width: 200px;
+    max-width: 200px;
+    aspect-ratio: 1;
     text-align: center;
     background-color: var(--primary);
     border-radius: var(--radius-sm);
@@ -136,4 +143,22 @@ input:focus{
 
 .cardGame:hover img{
     box-shadow: 0px 0px 30px var(--primary);
+}
+
+.spinners .spinner-grow:nth-child(2) {
+    animation-delay: 100ms;
+}
+
+.spinners .spinner-grow:nth-child(3){
+    animation-delay: 200ms;
+}
+
+.notFound{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.notFound i{
+    font-size: 80px;
 }

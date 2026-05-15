@@ -14,6 +14,11 @@ const results = await Promise.all([
 const game = results[0] 
 const assets = results[1]
 var isFavorite = results[2]
+if(game.detail){
+    document.querySelector(".loadingSec").classList.remove("d-flex")
+    document.querySelector(".loadingSec").classList.add("d-none")
+    document.querySelector(".notFound").classList.remove("d-none")
+}
 
 const imagesSec = document.querySelector(".imagesSec")
 
@@ -34,6 +39,11 @@ if(assets[0]){
     video.setAttribute("autoplay", true)
     video.src=assets[0].data['480']
     imagesSec.appendChild(video)
+}else{
+    var img = document.createElement("img")
+    img.src = assets[1].image 
+
+    imagesSec.appendChild(img)
 }
 assets.shift()
 
@@ -43,12 +53,16 @@ var modalImages = new bootstrap.Modal(modalEl)
 const carousel = document.querySelector(".carousel-games-images")
 
 const imgs = document.createElement("div")
-var img = document.createElement("img")
-img.src = assets[0].image 
 
-imgs.appendChild(img)
-imgs.classList.add("images")
+imgs.classList.add("imagesCont")
 assets.forEach(asset => {
+    var img = document.createElement("img")
+    img.src = asset.image 
+    console.log(imgs.children.length)
+    
+    if(imgs.children.length <3){
+        imgs.appendChild(img)
+    }
 
     img = img.cloneNode(true)
     img.src=asset.image
@@ -68,8 +82,9 @@ assets.forEach(asset => {
     
     
 });
+imgs.appendChild(document.querySelector(".vermaisTemplate").content.cloneNode(true))
+document.querySelector(".images").appendChild(imgs)
 
-imagesSec.appendChild(imgs)
 imagesSec.querySelector("div").addEventListener('click', ()=>{
         console.log("PRINT")
         modalImages.show()
@@ -166,3 +181,7 @@ btnFavorite.addEventListener('click', (ev)=>{
         btnFavorite.querySelector("span").textContent = "Remover dos Favoritos"
     }
 })
+
+document.querySelector("main").classList.remove("d-none")
+document.querySelector(".loadingSec").classList.remove("d-flex")
+document.querySelector(".loadingSec").classList.add("d-none")

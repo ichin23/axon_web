@@ -23,20 +23,31 @@ export async function getGameById(id){
     const params = new URLSearchParams({
         "id": id
     })
-    const response = await fetch("/api/getGameById?"+params)
 
-    const game = await response.json()
-
-    return game
+    try{
+        const response = await fetch("/api/getGameById?"+params)
+        
+        const game = await response.json()
+        
+        return game
+    }catch(e){
+        return null;
+    }
 }
 
 export async function getGameAssets(gameId){
     const params = new URLSearchParams({
         "id": gameId
     })
-    const response = await fetch("/api/getGameAssets?"+params)
 
-    const gameAssets = await response.json()
+    try{
 
-    return gameAssets
+        const response = await fetch("/api/getGameAssets?"+params)
+        
+        const gameAssets = await response.json()
+        
+        return gameAssets
+    }catch(e){
+        return null;
+    }
 }

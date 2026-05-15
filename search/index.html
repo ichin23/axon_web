@@ -54,13 +54,33 @@
     </header>
     
     <div class="content">
-      <main>
+      <main class="d-none">
         <h3>Resultados para: </h3>
         
         <div class="results">
           
         </div>
       </main>
+
+      <div class="notFound d-none">
+        <i class="bi bi-controller"></i>
+        <span>Nenhum jogo encontrado para a busca...</span>
+      </div>
+      
+      <section class="loadingSec w-100 h-100 d-flex justify-content-center align-items-center">
+        <div class="spinners">
+
+          <div class="spinner-grow" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </section>
     </div>
     <script src="https://unpkg.com/colorthief@3/dist/umd/color-thief.global.js"></script>
     <script type="module" src="./js/search.js"></script>
