@@ -108,7 +108,7 @@ function resetGame(){
 
 setInterval(game, 1000/60)
 
-document.getElementById("btnShoot").addEventListener('click', ()=>{
+document.getElementById("btnShoot").addEventListener('touchstart', ()=>{
     if(isGameOver){
         resetGame()
     }
@@ -119,3 +119,4 @@ document.addEventListener('keydown', (event)=>{
         resetGame()
     }
 })
+
