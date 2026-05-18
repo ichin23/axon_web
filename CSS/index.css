@@ -36,6 +36,12 @@ main section:target{
     padding-bottom: 80px;
 }
 
+@media(min-width: 768px){
+    .recentlyPlayed, .favoritesGames, .trendingGames{
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
 .cardGame img{
     width: 100%;
 }
