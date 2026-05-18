@@ -1,10 +1,25 @@
+import { getColorSync, getSwatches } from 'https://unpkg.com/colorthief@3/dist/index.js';
+
 
 export function createGameCard(id, imgUrl, name, isFavorite=false){
     const card = document.createElement("article")
     
     if(imgUrl){
         const img = document.createElement("img")
-        img.src = imgUrl
+        img.crossOrigin = "anonymous";
+        img.src = imgUrl+"?v=" + Date.now()
+
+        img.addEventListener('load', async ()=>{
+            const color = await getSwatches(img)
+
+            card.addEventListener('mouseover', ()=>{
+                img.style.boxShadow = `0px 0px 30px ${color.Vibrant.color.hex()}`
+            })
+            card.addEventListener('mouseleave', ()=>{
+                img.style.boxShadow = `none`
+            })
+        })
+
         card.appendChild(img)
     }else{
         const div = document.createElement("div")

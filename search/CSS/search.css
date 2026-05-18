@@ -6,6 +6,18 @@ main h3{
 .results{
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, 200px);
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 30px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+@media(min-width: 768px){
+    .results{
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+.cardGame img, .cardGame div{
+    width: 100%;
 }

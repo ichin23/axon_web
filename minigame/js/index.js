@@ -5,8 +5,35 @@ import BulletController from "./BulletController.js"
 const canvas = document.getElementById("game")
 const ctx = canvas.getContext('2d')
 
-canvas.width = 600;
-canvas.height = 600;
+const htmlElement = document.documentElement;
+const bodyElement = document.body;
+
+const width = Math.max(
+  htmlElement.clientWidth,
+  htmlElement.scrollWidth,
+  htmlElement.offsetWidth,
+  bodyElement.scrollWidth,
+  bodyElement.offsetWidth
+);
+
+const height = Math.max(
+  htmlElement.clientHeight,
+  htmlElement.scrollHeight,
+  htmlElement.offsetHeight,
+  bodyElement.scrollHeight,
+  bodyElement.offsetHeight
+);
+
+if(width < 568){
+    canvas.width = width - 20
+    canvas.height = height - 150
+}else if(width<600){
+    canvas.width = width
+    canvas.height = height   
+}else{
+    canvas.width = 600;
+    canvas.height = 600;
+}
 
 const background = new Image()
 background.src = "/img/space.webp"
@@ -37,11 +64,18 @@ function displayGameOver(){
         let textOffset = 5;
 
         ctx.fillStyle = "white";
-        ctx.font = "70px Arial"
-        ctx.fillText(text, canvas.width/textOffset, canvas.height/2)
+        if(canvas.width<600){
+            ctx.font = "40px Arial"
+            ctx.fillText(text, canvas.width/textOffset, canvas.height/2)
+            ctx.font = "15px Arial"
+            ctx.fillText("Pressione o botão para recomeçar", canvas.width/5.1, canvas.height/2+50)
+        }else{
+            ctx.font = "70px Arial"
+            ctx.fillText(text, canvas.width/textOffset, canvas.height/2)
+            ctx.font = "20px Arial"
+            ctx.fillText("Pressione (r) para recomeçar", canvas.width/4.5, canvas.height/2+50)
+        }
 
-        ctx.font = "20px Arial"
-        ctx.fillText("Pressione (r) para recomeçar", canvas.width/3.4, canvas.height/2+50)
     }
 }
 
@@ -62,15 +96,27 @@ function checkGameOver(){
     }
 }
 
+function resetGame(){
+    isGameOver=false
+    didWin=false
+
+    playerBulletController.reset()
+    enemyBulletController.reset()
+    enemyController.reset()
+    player.reset()
+}
+
 setInterval(game, 1000/60)
+
+document.getElementById("btnShoot").addEventListener('touchstart', ()=>{
+    if(isGameOver){
+        resetGame()
+    }
+})
 
 document.addEventListener('keydown', (event)=>{
     if(isGameOver && event.code==='KeyR'){
-        isGameOver=false
-        didWin=false
-
-        playerBulletController.reset()
-        enemyBulletController.reset()
-        enemyController.reset()
+        resetGame()
     }
 })
+

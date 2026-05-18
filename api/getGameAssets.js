@@ -14,7 +14,7 @@ module.exports = async function handler(req, res){
     const responseImg = await fetch(`${url}/games/${req.query.id}/screenshots?${params}`)
     const dataImg = await responseImg.json()
 
-    const assets = [dataVideos.results[0], ...dataImg.results]
+    const assets = [dataVideos.results[0] ?? null, ...dataImg.results]
 
     return res.json(assets)
 

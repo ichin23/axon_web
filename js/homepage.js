@@ -3,6 +3,9 @@ import { getFavorites } from "./games/useFavorite.js"
 import {getGameAssets, getGameById, searchGame} from "./games/useGames.js"
 import { getRecentlyPlayed } from "./games/useRecentlyPlayed.js"
 import {trendingGames} from "./trendingGames.js"
+//import { getColorSync, getPaletteSync } from 'colorthief';
+import { getColorSync } from 'https://unpkg.com/colorthief@3/dist/index.js';
+
 
 const menu = ["#recentlySection", "#trendingSection", "#favoritesSection"]
 const menuItens = document.querySelectorAll(".menuItem")
@@ -11,6 +14,8 @@ const menuItens = document.querySelectorAll(".menuItem")
 if(!location.hash || !menu.includes(location.hash)){
     location.hash = menu[0]
 }
+
+
 
 menuItens[menu.indexOf(location.hash)].classList.add("checked")
 
@@ -43,4 +48,9 @@ const notFoundFavorite = document.querySelector(".notFoundFavorite")
 favoritos.forEach((game)=>{
     favoritesGames.appendChild(createGameCard(game.id, game.img, game.name, false))
     notFoundFavorite.style.display='none'
+})
+
+document.querySelectorAll(".cardGame img").forEach((img)=>{
+    // const color = getColorSync(img)
+    // img.style.boxShadow = `0px 0px 30px ${color.hex()}`
 })

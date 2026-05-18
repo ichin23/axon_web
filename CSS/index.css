@@ -16,7 +16,7 @@ main{
 
 main{
     flex: 1;
-    max-width: 100%;
+    width: 100%;
 }
 
 main section{
@@ -29,19 +29,19 @@ main section:target{
     display: block;
 }
 
-.notFound, .notFoundFavorite{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.notFound i, .notFoundFavorite i{
-    font-size: 80px;
-}
-
 .recentlyPlayed, .favoritesGames, .trendingGames{
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 12px;
+    padding-bottom: 80px;
+}
+
+@media(min-width: 768px){
+    .recentlyPlayed, .favoritesGames, .trendingGames{
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+.cardGame img{
+    width: 100%;
 }
