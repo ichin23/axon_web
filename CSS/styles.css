@@ -60,6 +60,15 @@ main{
 
 }
 
+@media (max-width: 576px) {
+    :root {
+        --font-sm: 0.8rem;
+        --font-md: 1.5rem;
+        --font-lg: 1.7rem;
+        --font-exlg: 3.7rem;
+    }
+}
+
 .titleSection {
     font-size: var(--font-lg);
     color: var(--tertiary);

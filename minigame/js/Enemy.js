@@ -1,11 +1,11 @@
 
 export default class Enemy {
 
-    constructor(x, y, imageNumber) {
+    constructor(canvas, x, y, imageNumber) {
         this.x = x;
         this.y = y;
-        this.width = 44;
-        this.height = 32;
+        this.width = Math.min(48, canvas.width/15);
+        this.height = Math.min(48, (canvas.width/15)*0.9);
 
         this.image = new Image()
         this.image.src = `/img/alien${imageNumber}.png`

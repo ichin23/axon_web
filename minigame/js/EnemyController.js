@@ -31,6 +31,11 @@ export default class EnemyController{
         this.enemyDeathSound = new Audio("/sounds/enemy-death.wav")
         this.enemyDeathSound.volume = 0.1
 
+        if(this.canvas.width<576){
+            this.defaultXVelocity=0.7
+            this.defaultYVelocity=0.7
+        }
+
         this.createEnemies()
     }
 
@@ -63,7 +68,7 @@ export default class EnemyController{
             const allEnemies = this.enemyRows.flat();
             const enemyIndex = Math.floor(Math.random()*allEnemies.length);
             const enemy = allEnemies[enemyIndex];
-            this.enemyBulletController.shoot(enemy.x, enemy.y, -3);
+            this.enemyBulletController.shoot(enemy.x, enemy.y, this.canvas.width<576 ? -2 :-3);
             console.log(enemyIndex)
         }
     }
@@ -133,7 +138,7 @@ export default class EnemyController{
             this.enemyRows[rowIndex] = []
             row.forEach((enemyNumber, enemyIndex)=>{
                 if(enemyNumber >0){
-                    this.enemyRows[rowIndex].push(new Enemy(enemyIndex* 50, rowIndex * 35, enemyNumber))
+                    this.enemyRows[rowIndex].push(new Enemy(this.canvas, enemyIndex* Math.min(50, this.canvas.width/12), rowIndex * Math.min(38, this.canvas.width/15*0.9), enemyNumber))
                 }
             })
         })

@@ -31,12 +31,9 @@ main section:target{
 
 .recentlyPlayed, .favoritesGames, .trendingGames{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 12px;
-}
-
-@media (min-width: 576px){
-   
+    padding-bottom: 80px;
 }
 
 .cardGame img{

@@ -5,17 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game - AXON</title>
     <style>
-        body{
-            min-height: 100vh;
+
+        body {
+            overflow: hidden;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: black;
+            display: flex;
+            flex-direction: column;
         }
+
+        body > div {
+            width: 100vw;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #btnShoot {
+            aspect-ratio: 1;
+            outline: none;
+            padding: 10px;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            background-color: rgb(216, 21, 21);
+            box-shadow: -4px 4px 0 rgb(107, 9, 9);
+        }
+
+        #btnShoot:active {
+            box-shadow: inset -4px 4px 0 rgb(107, 9, 9);
+        }
+
+       input[type="range"] {
+            -webkit-appearance: none; /* Remove o estilo padrão no Chrome/Safari */
+            appearance: none;
+            width: 100%;          /* Ajusta a largura */
+            max-width: 200px;
+            background: #5a2222;         /* Estilo da barra (track) */
+            height: 8px;
+            border-radius: 4px;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            content: "< >";
+            -webkit-appearance: none;
+            appearance: none;
+            width: 75px;
+            height: 40px;
+            border-radius: 8px;
+            background: #313131;
+            box-shadow: -4px 4px 0 rgb(15, 15, 15);
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        /* Efeito de Hover (Opcional) */
+        input[type="range"]::-webkit-slider-thumb:hover {
+            background: #0056b3;
+        }
+
+        @media (min-width: 769px) {
+            body > div{
+                display:none;
+            }
+        }
+
     </style>
 </head>
 <body>
     <canvas id="game"></canvas>
+    <div>
+        <input type="range" min="-1" max="1" step="1" id="inputMoveController">
+        <button id="btnShoot"></button>
+    </div>
     <script type="module" src="js/index.js"></script>
 </body>
 </html>

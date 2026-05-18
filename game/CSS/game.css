@@ -122,6 +122,15 @@ main{
     }
 }
 
+@media (max-width: 768px){
+    .modal-dialog{
+        margin: auto !important;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+}
+
 .store{
     display: flex;
     flex-direction: column;
