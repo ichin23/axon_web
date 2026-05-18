@@ -111,7 +111,7 @@ main{
     border-radius: var(--radius-md);
 }
 
-@media (min-width: 576px){
+@media (min-width: 768px){
     .imagesSec{
         width: 60%;
     }
